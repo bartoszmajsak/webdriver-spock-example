@@ -6,7 +6,8 @@ import pl.bmajsak.github.pages.ProjectPage
 
 import spock.lang.*
 
-class SearchingFeatures extends Specification {
+
+class SearchingFeaturesSpec extends Specification {
 
     @Shared def driver = new FirefoxDriver();
     
@@ -26,7 +27,6 @@ class SearchingFeatures extends Specification {
     }
     
     def "Search for a file using tree finder"() {
-        
         given: "User enters project page"
             def fileName = "pom.xml"
             def projectPage = new ProjectPage(driver, fullProjectName)
@@ -38,13 +38,12 @@ class SearchingFeatures extends Specification {
             treeFinder.type fileName
             
         then: "File should be listed in tree viewer"
-        
             treeFinder.contains fileName
-        }
+    }
     
     def "Close browser"() {
         setup:
-            driver.close()
+            driver.quit()
     }
     
 
