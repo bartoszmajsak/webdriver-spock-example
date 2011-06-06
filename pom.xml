@@ -13,7 +13,7 @@
         <version.groovy>1.8.0</version.groovy>
         <version.guava>r09</version.guava>
         <version.junit>4.8.2</version.junit>
-        <version.selenium>2.0b3</version.selenium>
+        <version.selenium>2.0rc2</version.selenium>
         <version.fest.assert>1.4</version.fest.assert>
         <version.maven.compiler>2.3.1</version.maven.compiler>
         <version.groovy.eclipse.compile>2.5.1-M3</version.groovy.eclipse.compile>
