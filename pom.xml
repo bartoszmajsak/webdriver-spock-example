@@ -8,6 +8,14 @@
     <groupId>pl.bmajsak.bdd</groupId>
     <artifactId>webdriver-spock</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    
+    <repositories>
+        <repository>
+            <id>webdriver-enricher-gh-repo</id>
+            <name>webdriver-enricher repository on GitHub</name>
+            <url>http://bartoszmajsak.github.com/webdriver-enricher/repository/</url>
+        </repository>
+    </repositories>
 
     <properties>
         <version.groovy>1.8.0</version.groovy>
@@ -18,6 +26,7 @@
         <version.maven.compiler>2.3.1</version.maven.compiler>
         <version.groovy.eclipse.compile>2.5.1-M3</version.groovy.eclipse.compile>
         <version.spock>0.5-groovy-1.8</version.spock>
+        <version.webdriver.enricher>1.0.0-SNAPSHOT</version.webdriver.enricher>
     </properties>
 
     <dependencies>
@@ -46,6 +55,11 @@
                     <groupId>com.google.guava</groupId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>pl.bmajsak.webdriver</groupId>
+            <artifactId>webdriver-enricher</artifactId>
+            <version>${version.webdriver.enricher}</version>
         </dependency>
         <dependency>
             <groupId>org.easytesting</groupId>
