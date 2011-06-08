@@ -3,6 +3,7 @@ package pl.bmajsak.github.spec
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pl.bmajsak.github.pages.MainPage
 import pl.bmajsak.github.pages.ProjectPage
+import pl.bmajsak.webdriver.Browser
 import pl.bmajsak.webdriver.tooltip.Tooltip;
 
 import spock.lang.*
@@ -10,11 +11,20 @@ import spock.lang.*
 
 class SearchingFeaturesSpec extends Specification {
 
-    @Shared def driver = new FirefoxDriver();
+    @Shared driver = new FirefoxDriver();
     
     def projectName = "webdriver-spock";
 
     def fullProjectName = "bartoszmajsak/" + projectName;
+    
+    def setupSpec() {
+        def browser = new Browser(driver);
+        browser.fullscreen();
+    }
+    
+    def cleanupSpec() {
+        driver.quit()
+    }
     
     def "Searching for project by it's name"() {
         given: "User is on the main page"
@@ -49,11 +59,5 @@ class SearchingFeaturesSpec extends Specification {
             tooltip.show("As a result", "you should see files matching pattern highlighted");
             treeFinder.contains fileName
     }
-    
-    def "Close browser"() {
-        setup:
-            driver.quit()
-    }
-    
 
 }
