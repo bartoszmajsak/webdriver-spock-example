@@ -11,7 +11,7 @@ public class MainPage {
 
     private final WebDriver driver;
     
-    @FindBy(xpath = "//form[@id='top_search_form']/p/input[@class='search' and @name='q']")
+    @FindBy(name = "q")
     private WebElement searchBox;
 
     public MainPage(WebDriver driver) {

@@ -16,20 +16,15 @@ class SearchingFeaturesSpec extends Specification {
 
     def fullProjectName = "bartoszmajsak/" + projectName;
     
-    def setupSpec() {
-        def browser = new Browser(driver);
-        browser.fullscreen();
-    }
-    
     def cleanupSpec() {
         driver.quit()
     }
     
     def "Searching for project by it's name"() {
-        given: "User is on the main page"
+        given: "User goes to the main page"
             def mainPage =  new MainPage(driver)
         
-        when: "Enters project's name ${projectName} "
+        when: "Search for project ${projectName} "
             def resultsPage = mainPage.searchForProject(projectName)
         
         then: "Link to project site should be listed"
