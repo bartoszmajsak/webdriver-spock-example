@@ -15,11 +15,11 @@ class SearchingFeaturesScreencastSpec extends Specification {
     
     def projectName = "webdriver-spock";
 
-    def fullProjectName = "bartoszmajsak/" + projectName;
+    def fullProjectName = "bartoszmajsak/" + projectName
     
     def setupSpec() {
-        def browser = new Browser(driver);
-        browser.fullscreen();
+        def browser = new Browser(driver)
+        browser.fullscreen()
     }
     
     def cleanupSpec() {
@@ -31,12 +31,12 @@ class SearchingFeaturesScreencastSpec extends Specification {
             def mainPage =  new MainPage(driver)
             def tooltip = new Tooltip(driver)
         
-        when: "Enters project's name ${projectName} "
-            tooltip.show("Global search", "Type project name in the search box in the upper right corner of the website");
+        when: "Enters project's name ${projectName}"
+            tooltip.show("Global search", "Type project name in the search box in the upper right corner of the website")
             def resultsPage = mainPage.searchForProject(projectName)
         
         then: "Link to project site should be listed"
-            tooltip.show("As result", "You should see the project in the repositories section of the result page.");
+            tooltip.show("As result", "You should see the project in the repositories section of the result page.")
             resultsPage.containsProject projectName
     }
     
@@ -45,18 +45,18 @@ class SearchingFeaturesScreencastSpec extends Specification {
             def fileName = "pom.xml"
             def tooltip = new Tooltip(driver)
             def projectPage = new ProjectPage(driver, fullProjectName)
-            tooltip.show("Tree finder", "How to search for file patterns in whole project tree. Similar to Eclipse Open Type/Resource ");
+            tooltip.show("Tree finder", "How to search for file patterns in whole project tree. Similar to Eclipse Open Type/Resource ")
             
         when: "Hits keyboard shortcut to enable quick finder"
-            tooltip.show("Keyboard shortcut", "Hit T to enable interactive search");
+            tooltip.show("Keyboard shortcut", "Hit T to enable interactive search")
             def treeFinder = projectPage.enableTreeFinder()
         
         and: "searches for ${fileName}"
-            tooltip.show("Type what you are looking for", "In our case - ${fileName}");
+            tooltip.show("Type what you are looking for", "In our case - ${fileName}")
             treeFinder.type fileName
             
         then: "File should be listed in tree viewer"
-            tooltip.show("As a result", "you should see files matching pattern highlighted");
+            tooltip.show("As a result", "you should see files matching pattern highlighted")
             treeFinder.contains fileName
     }
 
