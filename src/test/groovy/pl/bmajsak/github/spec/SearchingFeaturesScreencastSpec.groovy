@@ -13,7 +13,7 @@ class SearchingFeaturesScreencastSpec extends Specification {
 
     @Shared driver = new FirefoxDriver();
     
-    def projectName = "webdriver-spock";
+    def projectName = "webdriver-spock-example";
 
     def fullProjectName = "bartoszmajsak/" + projectName
     
