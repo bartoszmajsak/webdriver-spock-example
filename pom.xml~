@@ -47,9 +47,8 @@
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
+            <artifactId>selenium</artifactId>
             <version>${version.selenium}</version>
-            <scope>provided</scope>
             <type>pom</type>
             <exclusions>
                 <exclusion>
