@@ -22,7 +22,7 @@ public class TreeFinder {
 
     private static final int SECONDS_TO_WAIT = 2;
 
-    private static final String TREE_FINDER_RESULTS = "//table[@class='tree-browser']/tbody[@class='js-results-list']//td[2]/a[@class='js-slide-to']";
+    private static final String TREE_FINDER_RESULTS = "//table[@class='tree-browser']/tbody[@class='js-results-list']//td[2]/a[@class='js-slide-to js-rewrite-sha']";
     
     private final EventFiringWebDriver driver;
 
